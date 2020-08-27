@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+          display: flex;
+          justify-content: center;
+          align-items:center ;
+          background: linear-gradient(to right , rgb(95, 223, 255),rgb(253, 33, 224));
+        }
+        #result {
+            /* width: 225px; */
+            width: fit-content;
+            margin: 10px;
+            border: 2px solid black;
+            border-radius: 10px;
+            font-family: sans-serif;
+            font-size: 1.4rem;
+            outline: none;
+            font-weight: bold;
+
+        }
+
+        .container {
+
+        
+            border: 3px solid red;
+            background-color: rgb(0, 0, 90);
+            margin-top: 10px;
+            width: fit-content;
+            padding: 20px;
+            border-radius: 50px;
+        }
+
+        .line1 {
+            display: flex;
+            /* justify-content:flex-start;
+        align-items: center; */
+            margin-left: 60px;
+
+        }
+
+        .line2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .line3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .line4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .line5 {
+            display: flex;
+            /* justify-content: center;
+        align-items: center; */
+            margin-left: 60px;
+
+        }
+
+        .item {
+            margin: 10px;
+            padding: 10px;
+            color: white;
+            border-radius: 5px;
+            font-size: 1.4rem;
+
+            font-family: 'Bree Serif', serif;
+
+
+        }
+
+        .item:hover {
+            background-color: rgb(11, 238, 238);
+            color: rgb(252, 59, 59);
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script>
+        function dis(val) {
+            document.getElementById("result").value += val
+        }
+
+        //function that evaluates the digit and return result 
+        function solve() {
+            let x = document.getElementById("result").value
+            let y = eval(x)
+            document.getElementById("result").value = y
+        }
+
+        //function that clear the display 
+        function clr() {
+            document.getElementById("result").value = ""
+        } 
+        let line=document.getElementsById('result');
+        
+        
+    </script>
+
+    <div class="container">
+        <input type="text" name="inp" id="result" readonly="">
+        <div class="line1">
+            <div class="item"  onclick="clr()">C</div>
+            <div class="item"  onclick="dis('%')">%</div>
+            <div class="item"  onclick="dis('/')">/</div>
+        </div>
+        <div class="line2">
+            <div class="item" onclick="dis('7')">7</div>
+            <div class="item"   onclick="dis('8')">8</div>
+            <div class="item"   onclick="dis('9')">9</div>
+            <div class="item"   onclick="dis('*')">*</div>
+        </div>
+        <div class="line3">
+            <div class="item"   onclick="dis('4')">4</div>
+            <div class="item"   onclick="dis('5')">5</div>
+            <div class="item"  onclick="dis('6')">6</div>
+            <div class="item"  onclick="dis('-')">-</div>
+        </div>
+        <div class="line4">
+            <div class="item"  onclick="dis('1')">1</div>
+            <div class="item"  onclick="dis('2')">2</div>
+            <div class="item"  onclick="dis('3')">3</div>
+            <div class="item"  onclick="dis('+')">+</div>
+        </div>
+        <div class="line5">
+            <div class="item"  onclick="dis('0')">0</div>
+            <div class="item"  onclick="dis('.')">.</div>
+            <div class="item"  onclick="solve()">=</div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
